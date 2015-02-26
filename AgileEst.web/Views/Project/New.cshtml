@@ -1,0 +1,50 @@
+﻿@using AgileEst.lib
+@using Microsoft.Ajax.Utilities
+@model AgileEst.web.Models.ProjectViewModel
+
+<div><h1>@Model.Name</h1></div>
+<div>@Model.IncludeIterationZero</div>
+<div>@Model.NumberOfIterations</div>
+<div>@Model.NumberOfWeeksInIteration</div>
+<hr />
+<select>
+	<option selected="selected">-- Add Role to Project--</option>
+	@foreach (var role in Model.RoleCollection)
+	{
+		<option>@role.Name</option>
+	}
+</select>
+<button>Add</button>
+<hr />
+<div>
+	<table class="table table-bordered table-striped table-hover">
+		<tr>
+			<th>#</th>
+			<th>First Day</th>
+			<th>Last Day</th>
+			<th>V</th>
+			@foreach (var role in Model.Roles)
+			{
+				<th class="rotate"><div><span>@role.Name</span></div></th>
+			}
+		</tr>
+		@foreach (var it in Model.Iterations.OrderBy(i => i.Number))
+		{
+			<tr>
+				<td>@it.Number</td>
+				<td>@it.FirstDay.ToShortDateString()</td>
+				<td>@it.LastDay.ToShortDateString()</td>
+				<td>@it.TargetedVelocity</td>
+				@foreach (var role in Model.Roles)
+				{
+					<td></td>
+				}
+			</tr>
+		}
+	</table>
+	<hr/>
+	@foreach (var role in Model.Roles)
+	{
+		<div>@role.Name <span>=></span>@role.Rate<button>Remove</button></div>
+	}
+</div>
