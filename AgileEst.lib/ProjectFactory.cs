@@ -15,27 +15,29 @@ namespace AgileEst.lib
 				NumberOfIterations = NumberOfIterations,
 				StartDate = StartDate,
 				Iterations = CreateIterations(),
-				ProjectRoles = SPIKECreateProjectRoles(5)
+				ProjectRoles = SPIKECreateProjectRoles()
 			};
 
 			return project;
 		}
 
-		private List<ProjectRole> SPIKECreateProjectRoles(int numRoles)
+		private List<ProjectRole> SPIKECreateProjectRoles()
 		{
 			var roles = new List<ProjectRole>();
 
-			for (var i = 0; i < numRoles; i++)
-			{
-				roles.Add(new ProjectRole
-				{
-					Description = "",
-					MaxRate = 10,
-					MinRate = 5,
-					Name = i.ToString(),
-					Rate = (decimal) 7.5
-				});
-			}
+		  var roleCollection = new ProjectRoleCollection();
+
+		  foreach (var role in roleCollection)
+		  {
+        roles.Add(new ProjectRole
+        {
+          Description = role.Description,
+          MaxRate = role.MaxRate,
+          MinRate = role.MinRate,
+          Name = role.Name,
+          Rate = role.Rate
+        });
+		  }
 
 			return roles;
 		}
