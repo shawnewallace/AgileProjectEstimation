@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AgileEst.lib;
 using AgileEst.web.Models;
@@ -18,7 +15,7 @@ namespace AgileEst.web.Controllers
 
 		public ActionResult New()
 		{
-			var factory = new ProjectFactory()
+			var model = new NewProjectViewModel()
 			{
 				Name = "New Project",
 				IncludeIterationZero = true,
@@ -26,11 +23,25 @@ namespace AgileEst.web.Controllers
 				NumberOfWeeksInIteration = 2,
 				StartDate = FirstWednesdayAfterToday()
 			};
+			
+			return View("New", model);
+		}
+
+		public ActionResult Create(NewProjectViewModel input)
+		{
+			var factory = new ProjectFactory()
+			{
+				Name = input.Name,
+				IncludeIterationZero = input.IncludeIterationZero,
+				NumberOfIterations = input.NumberOfIterations,
+				NumberOfWeeksInIteration = input.NumberOfWeeksInIteration,
+				StartDate = input.StartDate
+			};
 
 			var project = factory.Execute();
-			var model = new ProjectViewModel(project) {RoleCollection = new ProjectRoleCollection()};
+			var model = new ProjectViewModel(project) { RoleCollection = new ProjectRoleCollection() };
 
-			return View("New", model);
+			return View("Edit", model);
 		}
 
 		private static DateTime FirstWednesdayAfterToday()
@@ -40,7 +51,7 @@ namespace AgileEst.web.Controllers
 			if (rightNow.DayOfWeek == DayOfWeek.Sunday) return rightNow.AddDays(3);
 			if (rightNow.DayOfWeek == DayOfWeek.Monday) return rightNow.AddDays(2);
 			if (rightNow.DayOfWeek == DayOfWeek.Tuesday) return rightNow.AddDays(1);
-			
+
 			if (rightNow.DayOfWeek == DayOfWeek.Thursday) return rightNow.AddDays(6);
 			if (rightNow.DayOfWeek == DayOfWeek.Friday) return rightNow.AddDays(5);
 			if (rightNow.DayOfWeek == DayOfWeek.Saturday) return rightNow.AddDays(4);

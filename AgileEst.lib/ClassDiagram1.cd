@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgileEst.lib.ProjectRoleCollection">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProjectRoleCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgileEst.lib.ProjectBase">
+    <Position X="6.25" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAEAAAAAAAAAAAQAAAgAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ProjectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgileEst.lib.Project">
+    <Position X="2" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Iterations" />
+      <Property Name="ProjectRoles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AgileEst.lib.Iteration">
+    <Position X="4.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Iteration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgileEst.lib.ProjectRole">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProjectRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgileEst.lib.Role">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgileEst.lib.EntityBase">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

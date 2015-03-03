@@ -13,6 +13,7 @@ namespace AgileEst.lib
 				Name = Name,
 				IncludeIterationZero = IncludeIterationZero,
 				NumberOfIterations = NumberOfIterations,
+				NumberOfWeeksInIteration = NumberOfWeeksInIteration,
 				StartDate = StartDate,
 				Iterations = CreateIterations(),
 				ProjectRoles = SPIKECreateProjectRoles()
